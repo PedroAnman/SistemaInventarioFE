@@ -49,7 +49,9 @@ export class RegistrarProductoComponent {
             this.mensaje = result?.addProducto.message;
             if(result?.addProducto.status){
               this.err = true;
-              this.router.navigate(['/productos']);
+              this.router.navigate(['/productos']).then(() => {
+                window.location.reload();
+              });
             }
           }
           this.err = true;
